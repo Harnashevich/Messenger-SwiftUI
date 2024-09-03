@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ConversationListView.swift
 //  MessengerSwiftUI
 //
 //  Created by Andrei Harnashevich on 3.09.24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ConversationListView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ConversationListView()
 }

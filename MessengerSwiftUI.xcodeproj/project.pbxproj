@@ -8,17 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		9F9661A52C8722D6005D7251 /* MessengerSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661A42C8722D6005D7251 /* MessengerSwiftUIApp.swift */; };
-		9F9661A72C8722D6005D7251 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661A62C8722D6005D7251 /* ContentView.swift */; };
+		9F9661A72C8722D6005D7251 /* ConversationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661A62C8722D6005D7251 /* ConversationListView.swift */; };
 		9F9661A92C8722D8005D7251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F9661A82C8722D8005D7251 /* Assets.xcassets */; };
 		9F9661AC2C8722D8005D7251 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F9661AB2C8722D8005D7251 /* Preview Assets.xcassets */; };
+		9F9661B62C872375005D7251 /* SingInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661B52C872375005D7251 /* SingInView.swift */; };
+		9F9661B82C87238C005D7251 /* SingUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661B72C87238C005D7251 /* SingUpView.swift */; };
+		9F9661BA2C87239A005D7251 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661B92C87239A005D7251 /* ChatView.swift */; };
+		9F9661BC2C8723A7005D7251 /* ChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661BB2C8723A7005D7251 /* ChatRow.swift */; };
+		9F9661BE2C8723B7005D7251 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661BD2C8723B7005D7251 /* SearchView.swift */; };
+		9F9661C02C8723C9005D7251 /* SendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661BF2C8723C9005D7251 /* SendButton.swift */; };
+		9F9661C22C8723D6005D7251 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661C12C8723D6005D7251 /* Message.swift */; };
+		9F9661C42C8723E3005D7251 /* AppStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9661C32C8723E3005D7251 /* AppStateModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9F9661A12C8722D6005D7251 /* MessengerSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9661A42C8722D6005D7251 /* MessengerSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerSwiftUIApp.swift; sourceTree = "<group>"; };
-		9F9661A62C8722D6005D7251 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9F9661A62C8722D6005D7251 /* ConversationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListView.swift; sourceTree = "<group>"; };
 		9F9661A82C8722D8005D7251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F9661AB2C8722D8005D7251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9F9661B52C872375005D7251 /* SingInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInView.swift; sourceTree = "<group>"; };
+		9F9661B72C87238C005D7251 /* SingUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpView.swift; sourceTree = "<group>"; };
+		9F9661B92C87239A005D7251 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		9F9661BB2C8723A7005D7251 /* ChatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRow.swift; sourceTree = "<group>"; };
+		9F9661BD2C8723B7005D7251 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		9F9661BF2C8723C9005D7251 /* SendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButton.swift; sourceTree = "<group>"; };
+		9F9661C12C8723D6005D7251 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9F9661C32C8723E3005D7251 /* AppStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +67,9 @@
 		9F9661A32C8722D6005D7251 /* MessengerSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				9F9661A42C8722D6005D7251 /* MessengerSwiftUIApp.swift */,
-				9F9661A62C8722D6005D7251 /* ContentView.swift */,
-				9F9661A82C8722D8005D7251 /* Assets.xcassets */,
+				9F9661B42C872306005D7251 /* Resources */,
+				9F9661B32C8722FE005D7251 /* Models */,
+				9F9661B22C8722F6005D7251 /* Views */,
 				9F9661AA2C8722D8005D7251 /* Preview Content */,
 			);
 			path = MessengerSwiftUI;
@@ -65,6 +81,38 @@
 				9F9661AB2C8722D8005D7251 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9F9661B22C8722F6005D7251 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F9661A62C8722D6005D7251 /* ConversationListView.swift */,
+				9F9661B52C872375005D7251 /* SingInView.swift */,
+				9F9661B72C87238C005D7251 /* SingUpView.swift */,
+				9F9661B92C87239A005D7251 /* ChatView.swift */,
+				9F9661BB2C8723A7005D7251 /* ChatRow.swift */,
+				9F9661BD2C8723B7005D7251 /* SearchView.swift */,
+				9F9661BF2C8723C9005D7251 /* SendButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9F9661B32C8722FE005D7251 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9F9661C12C8723D6005D7251 /* Message.swift */,
+				9F9661C32C8723E3005D7251 /* AppStateModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9F9661B42C872306005D7251 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F9661A42C8722D6005D7251 /* MessengerSwiftUIApp.swift */,
+				9F9661A82C8722D8005D7251 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +185,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F9661A72C8722D6005D7251 /* ContentView.swift in Sources */,
+				9F9661B82C87238C005D7251 /* SingUpView.swift in Sources */,
+				9F9661C02C8723C9005D7251 /* SendButton.swift in Sources */,
+				9F9661A72C8722D6005D7251 /* ConversationListView.swift in Sources */,
+				9F9661C22C8723D6005D7251 /* Message.swift in Sources */,
+				9F9661BA2C87239A005D7251 /* ChatView.swift in Sources */,
+				9F9661BE2C8723B7005D7251 /* SearchView.swift in Sources */,
+				9F9661B62C872375005D7251 /* SingInView.swift in Sources */,
+				9F9661BC2C8723A7005D7251 /* ChatRow.swift in Sources */,
 				9F9661A52C8722D6005D7251 /* MessengerSwiftUIApp.swift in Sources */,
+				9F9661C42C8723E3005D7251 /* AppStateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
