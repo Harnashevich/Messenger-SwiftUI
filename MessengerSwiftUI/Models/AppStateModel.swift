@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
 
 class AppStateModel: ObservableObject {
     @AppStorage("currentUsername") var currentUsername: String = ""
@@ -14,6 +16,9 @@ class AppStateModel: ObservableObject {
     @Published var showingSignIn: Bool = true
     @Published var conversations: [String] = []
     @Published var messages: [Message] = []
+    
+    let database = Firestore.firestore()
+    let auth = Auth.auth()
     
     var otherUsername = ""
 }
