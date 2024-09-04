@@ -9,9 +9,12 @@ import SwiftUI
 
 struct ConversationListView: View {
     let usernames = ["Joe", "Jill", "Bob"]
+    @EnvironmentObject var model: AppStateModel
+    @State var otherUsername: String = ""
+    @State var showChat = false
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView(.vertical) {
                 ForEach(usernames, id: \.self) { name in
                     NavigationLink {
@@ -31,7 +34,14 @@ struct ConversationListView: View {
                         }
                         .padding()
                     }
+                    
+                    if !otherUsername.isEmpty {
+                        NavigationLink("",
+                                       destination: ChatView(otherUsername: otherUsername),
+                                       isActive: $showChat)
+                    }
                 }
+                
                 .navigationTitle("Conversation")
                 .toolbar {
                     ToolbarItem(placement: ToolbarItemPlacement.topBarLeading) {
@@ -42,13 +52,21 @@ struct ConversationListView: View {
                     
                     ToolbarItem(placement: ToolbarItemPlacement.topBarTrailing) {
                         NavigationLink {
-                            SearchView()
+                            SearchView() { name in
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    self.otherUsername = name
+                                    self.showChat = true
+                                }
+                            }
                         } label: {
                             Image(systemName: "magnifyingglass")
                         }
                     }
                 }
             }
+            .fullScreenCover(isPresented: $model.showingSignIn, content: {
+                SingInView()
+            })
         }
     }
     
@@ -59,4 +77,5 @@ struct ConversationListView: View {
 
 #Preview {
     ConversationListView()
+        .environmentObject(AppStateModel())
 }
