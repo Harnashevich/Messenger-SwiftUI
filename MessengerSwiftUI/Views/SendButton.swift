@@ -9,12 +9,13 @@ import SwiftUI
 
 struct SendButton: View {
     @Binding var text: String
-    
+    @EnvironmentObject var model: AppStateModel
+
     var body: some View {
         Button(action: {
-            sendMessage()
+            self.sendMessage()
         }, label: {
-           Image(systemName: "paperplane")
+            Image(systemName: "paperplane")
                 .font(.system(size: 33))
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 55, height: 55)
@@ -23,13 +24,14 @@ struct SendButton: View {
                 .clipShape(Circle())
         })
     }
-    
+
     func sendMessage() {
-        guard !text.isEmpty else { return }
-        
+        guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+            return
+        }
+
+        model.sendMessage(text: text)
+
+        text = ""
     }
 }
-//
-//#Preview {
-//    SendButton()
-//}

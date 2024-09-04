@@ -8,74 +8,86 @@
 import SwiftUI
 
 struct ConversationListView: View {
-    let usernames = ["Joe", "Jill", "Bob"]
     @EnvironmentObject var model: AppStateModel
     @State var otherUsername: String = ""
     @State var showChat = false
-    
+    @State var showSearch = false
+
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
-                ForEach(usernames, id: \.self) { name in
-                    NavigationLink {
-                        ChatView(otherUsername: name)
-                    } label: {
-                        HStack {
-                            Circle()
-                                .frame(width: 65, height: 65)
-                                .foregroundStyle(Color.pink)
-                            
-                            Text(name)
-                                .bold()
-                                .foregroundStyle(Color(.label))
-                                .font(.system(size: 32))
-                            
-                            Spacer()
-                        }
-                        .padding()
-                    }
-                    
-                    if !otherUsername.isEmpty {
-                        NavigationLink("",
-                                       destination: ChatView(otherUsername: otherUsername),
-                                       isActive: $showChat)
+                ForEach(model.conversations, id: \.self) { name in
+                    NavigationLink(
+                        destination: ChatView(otherUsername: name),
+                        label: {
+                            HStack {
+                                Image(model.currentUsername == "Matt" ? "photo1" : "photo2")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 65, height: 65)
+                                    .foregroundColor(Color.pink)
+                                    .clipShape(Circle())
+
+                                Text(name)
+                                    .bold()
+                                    .foregroundColor(Color(.label))
+                                    .font(.system(size: 32))
+
+                                Spacer()
+                            }
+                            .padding()
+                        })
+                }
+
+                if !otherUsername.isEmpty {
+                    NavigationLink("",
+                                   destination: ChatView(otherUsername: otherUsername),
+                                   isActive: $showChat)
+                }
+            }
+            .navigationTitle("Conversations")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Sign Out") {
+                        self.signOut()
                     }
                 }
-                
-                .navigationTitle("Conversation")
-                .toolbar {
-                    ToolbarItem(placement: ToolbarItemPlacement.topBarLeading) {
-                        Button("Sing Out") {
-                            singOut()
-                        }
-                    }
-                    
-                    ToolbarItem(placement: ToolbarItemPlacement.topBarTrailing) {
-                        NavigationLink {
-                            SearchView() { name in
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                    self.otherUsername = name
-                                    self.showChat = true
-                                }
+
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(
+                        destination: SearchView { name in
+                            self.showSearch = false
+                            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                                self.showChat = true
+                                self.otherUsername = name
                             }
-                        } label: {
+                        },
+                        isActive: $showSearch,
+                        label: {
                             Image(systemName: "magnifyingglass")
-                        }
-                    }
+                        })
                 }
             }
             .fullScreenCover(isPresented: $model.showingSignIn, content: {
                 SingInView()
             })
+            .onAppear {
+                guard model.auth.currentUser != nil else {
+                    return
+                }
+
+                model.getConversations()
+            }
         }
     }
-    
-    func singOut() {
-        
+
+    func signOut() {
+        model.signOut()
     }
 }
 
-#Preview {
-    ConversationListView()
-        .environmentObject(AppStateModel())
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ConversationListView()
+    }
 }
