@@ -49,6 +49,7 @@ struct ChatView: View {
             .padding()
         }
         .navigationTitle(otherUsername)
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             model.otherUsername = otherUsername
             model.observeChat()

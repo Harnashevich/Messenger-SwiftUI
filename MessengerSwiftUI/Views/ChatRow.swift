@@ -10,6 +10,7 @@ import SwiftUI
 struct ChatRow: View {
     let type: MessageType
     let text: String
+    @EnvironmentObject var model: AppStateModel
     
     var isSender: Bool {
         type == .sent
@@ -30,9 +31,12 @@ struct ChatRow: View {
             if !isSender {
                 VStack {
                     Spacer()
-                    Circle()
+                    Image(model.currentUsername == "andrei" ? "photo1" : "photo2")
+                        .resizable()
+                        .scaledToFit()
                         .frame(width: 45, height: 45)
-                        .foregroundStyle(Color.pink)
+                        .foregroundColor(Color.pink)
+                        .clipShape(Circle())
                 }
             }
             HStack {

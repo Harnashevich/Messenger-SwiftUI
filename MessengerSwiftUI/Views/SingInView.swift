@@ -14,7 +14,7 @@ struct SingInView: View {
     @EnvironmentObject var model: AppStateModel
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 // Heading
                 Image("logo")

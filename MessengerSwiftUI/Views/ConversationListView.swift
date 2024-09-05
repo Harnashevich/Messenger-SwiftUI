@@ -21,7 +21,7 @@ struct ConversationListView: View {
                         destination: ChatView(otherUsername: name),
                         label: {
                             HStack {
-                                Image(model.currentUsername == "Matt" ? "photo1" : "photo2")
+                                Image(model.currentUsername == "andrei" ? "photo1" : "photo2")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 65, height: 65)
