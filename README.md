@@ -14,4 +14,4 @@ The project is based on the iOS Academy course.
 • SwiftUI <br />
 • Firebase storage and authentication
 
-![MyCollages2](https://github.com/user-attachments/assets/da6aab06-9084-422b-9c51-9b41fc4eb195)
+ ![Frame 4](https://github.com/user-attachments/assets/55ed91c4-5891-4bd3-bba8-5ac3a2813951)
